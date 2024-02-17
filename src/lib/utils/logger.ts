@@ -1,13 +1,15 @@
-import winston, { Logger } from 'winston';
-import 'dotenv/config';
-import util from 'util';
+import winston, { Logger } from "winston";
+import util from "util";
 const { combine, colorize } = winston.format;
 
 const transform = () => {
   return {
     transform: (info: any) => {
       info.oldMessage = info.message;
-      info.message = util.format(info.stack || info.message, ...(info[Symbol.for('splat')] || []));
+      info.message = util.format(
+        info.stack || info.message,
+        ...(info[Symbol.for("splat")] || [])
+      );
       return info;
     },
   };
@@ -29,14 +31,14 @@ const logger: Logger = winston.createLogger({
     winston.format.printf((info: any) => {
       return `${new Date().toISOString()} [${info.level}] : ${info.stack || info.message}`;
     }),
-    transformBack(),
+    transformBack()
   ),
 });
 
 logger.add(
   new winston.transports.Console({
-    level: 'debug',
-  }),
+    level: "debug",
+  })
 );
 
 export { logger };

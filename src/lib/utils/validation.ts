@@ -1,7 +1,11 @@
 import * as yup from "yup";
 
 const loginSchema = yup.object().shape({
-  email_id: yup.string().email().required("Personal email is required"),
+  email: yup
+    .string()
+    .email("Personal email is not valid email")
+    .required("Personal email is required"),
+  password: yup.string().min(8, "Password must be at least 8 characters"),
 });
 
 const signUpSchema = yup.object().shape({

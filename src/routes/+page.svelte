@@ -3,6 +3,7 @@
   import Button from "$lib/UI/Button.svelte";
   import SecButton from "$lib/UI/SecButton.svelte";
   import Card from "$lib/UI/Card.svelte";
+  import SearchIcon from "$lib/svg/Search.svg.svelte";
 </script>
 
 <section class="bg-gray-100 sm:p-20 p-2 text-center place-items-center">
@@ -44,7 +45,39 @@
       p="One Stop Place for ONDC Netwrok, Regardless of what aspect of business you are engaged in, We provides you opportunities to accelerate your growth. "
     />
   </section>
+  <section>
+    <h2 class="font-bold sm:text-4xl text-3xl mb-5 text-left">Services</h2>
+    <p class="h-0.5 bg-blue-500 mb-5 w-1/4"></p>
+    <div class="sm:grid sm:grid-cols-2">
+      <img src="./service.png" class="w-96 m-5 grid-cols-1" alt="" srcset="" />
+      <div class="grid-cols-1 py-20">
+        <div class="flex items-center space-x-6 py-3">
+          <SearchIcon />
+          <a href="#" class="text-gray-400"
+            >Retail Search, get all the seller's information just in one click.</a
+          >
+        </div>
+        <div class="flex items-center space-x-6 py-3">
+          <img src="./dashboard.png" class="h-6" alt="" srcset="" />
+          <a href="#" class="text-gray-400"
+            >Intuitive and informative dashboard.</a
+          >
+        </div>
+        <div class="flex items-center space-x-6 py-3">
+          <img src="./order.png" class="h-7" alt="" srcset="" />
+          <a href="#" class="text-gray-400"
+            >Connectivity with every seller, showcase sellers in your buyer app.
+          </a>
+        </div>
+        <div class="flex items-center space-x-6 py-3">
+          <img src="./issue.png" class="h-7" alt="" srcset="" />
+          <a href="#" class="text-gray-400">IGM: Issue management system. </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </section>
+
 <section class="sm:grid sm:grid-cols-2 place-items-center bg-gray-100 h-auto">
   <div class="grid-cols-1">
     <img
@@ -90,6 +123,3 @@
     Focus on business,<br />not development.
   </h2>
 </section>
-
-<style>
-</style>

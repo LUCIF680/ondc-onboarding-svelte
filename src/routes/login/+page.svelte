@@ -1,15 +1,17 @@
 <script lang="ts">
   import Input from "$lib/UI/Input.svelte";
+  import { getEnv } from "$lib/utils/getEnv";
+  // import { logger } from "$lib/utils/logger";
   import { validate, loginSchema } from "$lib/utils/validation";
   import { writable, type Writable } from "svelte/store";
 
   export let errors: Writable<null | Record<string, string>> = writable({});
   export let placeholder = ["Enter Email Address", "Enter Password"];
-  export let names = ["email_id", "password"];
+  export let names = ["email", "password"];
 
   // Global Error handling is done in +layout.svelte
   async function handleSubmit(event: Event) {
-    const ACTION_URL = "";
+    const url: string = getEnv("VITE_API_URL").concat("user/login");
 
     // Convert formData to Object, to validate it.
     const formData = new FormData(event.target as HTMLFormElement);
@@ -27,17 +29,21 @@
     $errors = await validate(loginSchema, body);
     if ($errors !== null) return;
 
-    // Send POST request to the backend
-    let response = await fetch(ACTION_URL, {
+    let response: Response = await fetch(url, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body),
     });
-    response = await response.json();
 
-    if (response.type === "error") {
-      throw new Error(response.error.message);
+    if (response.status === 200 || response.status === 201) {
+      return;
     }
+    response = await response.json();
+    if (response.type === "error") {
+      throw new Error(response.message);
+    }
+
+    throw new Error(response.error.message);
   }
 </script>
 
@@ -68,7 +74,7 @@
 
       <p>
         <span class="text-xs text-red-600 dark:text-red-400 font-medium"
-          >{$errors.ops || ""}</span
+          >{$errors?.ops || ""}</span
         >
       </p>
 
@@ -76,7 +82,7 @@
         <Input
           {name}
           placeholder={placeholder[offset]}
-          errorMsg={$errors[name] || ""}
+          errorMsg={$errors?.[name] || ""}
         />
       {/each}
 
