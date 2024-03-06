@@ -4,7 +4,6 @@
   import Footer from "components/Footers/Footer.svelte";
 
   const team2 = "/assets/img/team-2-800x800.jpg";
-  export let location;
 </script>
 
 <div>
@@ -53,7 +52,7 @@
                 <div class="relative">
                   <img
                     alt="..."
-                    src="{team2}"
+                    src={team2}
                     class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px"
                   />
                 </div>
@@ -108,7 +107,8 @@
               <div
                 class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
               >
-                <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
+                <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"
+                ></i>
                 Los Angeles, California
               </div>
               <div class="mb-2 text-blueGray-600 mt-10">

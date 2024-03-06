@@ -3,11 +3,8 @@ import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import livereload from "rollup-plugin-livereload";
 import { terser } from "rollup-plugin-terser";
-// library that helps you import in svelte with
-// absolute paths, instead of
-// import Component  from "../../../../components/Component.svelte";
-// we will be able to say
-// import Component from "components/Component.svelte";
+import dotenv from "rollup-plugin-dotenv";
+
 import alias from "@rollup/plugin-alias";
 import fs from "fs";
 
@@ -20,6 +17,7 @@ const aliases = alias({
     { find: "components", replacement: "src/components" },
     { find: "views", replacement: "src/views" },
     { find: "assets", replacement: "src/assets" },
+    { find: "utils", replacement: "src/utils" },
   ],
 });
 
@@ -153,6 +151,7 @@ export default {
     file: "public/build/bundle.js",
   },
   plugins: [
+    dotenv(),
     svelte({
       // enable run-time checks when not in production
       dev: !production,

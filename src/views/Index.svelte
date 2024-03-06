@@ -479,8 +479,7 @@
           <h3 class="text-3xl font-semibold">Complex Documentation</h3>
           <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
             This extension comes a lot of fully coded examples that help you get
-            started faster. You can adjust the colors and also the programming
-            language. You can change the text and images and you're good to go.
+            started faster. All endpoints well documented.
           </p>
           <ul class="list-none mt-6">
             <li class="py-2">
@@ -510,7 +509,7 @@
                 </div>
                 <div>
                   <h4 class="text-blueGray-500">
-                    Carefully crafted code for Components
+                    Tailored code for Integration
                   </h4>
                 </div>
               </div>
@@ -525,9 +524,7 @@
                   </span>
                 </div>
                 <div>
-                  <h4 class="text-blueGray-500">
-                    Dynamic Javascript Components
-                  </h4>
+                  <h4 class="text-blueGray-500">Endspoint with Example</h4>
                 </div>
               </div>
             </li>

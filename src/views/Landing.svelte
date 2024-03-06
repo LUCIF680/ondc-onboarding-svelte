@@ -149,18 +149,22 @@
             <p
               class="text-lg font-light leading-relaxed mt-4 mb-4 text-blueGray-600"
             >
-              Don't let your uses guess by attaching tooltips and popoves to any
-              element. Just make sure you enable them first via JavaScript.
+              Our platform is meticulously crafted to streamline the ONDC
+              services, offering a comprehensive suite of capabilities essential
+              for developing applications in the near future.
             </p>
             <p
               class="text-lg font-light leading-relaxed mt-0 mb-4 text-blueGray-600"
             >
-              The kit comes with three pre-built pages to help you get started
-              faster. You can change the text and images and you're good to go.
-              Just make sure you enable them first via JavaScript.
+              Our api system ensures a seamless experience, paving the way for
+              efficient and innovative application development.
             </p>
-            <a use:link href="/" class="font-bold text-blueGray-700 mt-8">
-              Check Notus Svelte!
+            <a
+              use:link
+              href="/pricing"
+              class="font-bold text-blueGray-700 mt-8"
+            >
+              Check Pricing
             </a>
           </div>
 
@@ -583,9 +587,7 @@
             <h3 class="text-3xl font-semibold">Complex Documentation</h3>
             <p class="mt-4 text-lg leading-relaxed text-blueGray-500">
               This extension comes a lot of fully coded examples that help you
-              get started faster. You can adjust the colors and also the
-              programming language. You can change the text and images and
-              you're good to go.
+              get started faster. All endpoints well documented.
             </p>
             <ul class="list-none mt-6">
               <li class="py-2">
@@ -615,7 +617,7 @@
                   </div>
                   <div>
                     <h4 class="text-blueGray-500">
-                      Carefully crafted code for Components
+                      Tailored code for Integration
                     </h4>
                   </div>
                 </div>
@@ -630,9 +632,7 @@
                     </span>
                   </div>
                   <div>
-                    <h4 class="text-blueGray-500">
-                      Dynamic Javascript Components
-                    </h4>
+                    <h4 class="text-blueGray-500">Endspoint with Example</h4>
                   </div>
                 </div>
               </li>
